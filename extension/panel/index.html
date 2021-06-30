@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Testing Extension</title>
+</head>
+<body>
+    <div id="content">
+        <div id="buttons">
+            <p>Actions</p>
+            <button id="share">Login/Logout</button>
+        </div>
+
+        <div id="error"></div>
+        <table>
+            <tr><td>onAuthorized</td><td id="onAuthorized"></td></tr>
+            <tr><td>isLinked</td><td id="isLinked"></td></tr>
+        </table>
+
+        <p>onAuthorized Data</p>
+        <table id="onAuthorizedData"></table>
+        <p>context data</p>
+        <table id="context"></table>
+
+        <p>onHighlightChanged data</p>
+        <table id="onHighlightChanged"></table>
+        <p>onVisibilityChanged data</p>
+        <table id="onVisibilityChanged"></table>
+
+        <p>featureflags data</p>
+        <table id="features"></table>
+        <p>featureflags onchanged data</p>
+        <div id="features_onchanged"></div>
+
+        <p>viewer data</p>
+        <table id="viewer"></table>
+        <p>viewer onchanged data</p>
+        <table id="viewer_onchanged"></div>
+
+        <p>Query Params</p>
+        <div id="query_params"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
