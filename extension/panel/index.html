@@ -9,41 +9,65 @@
 </head>
 <body>
     <div id="content">
-        <div id="buttons">
-            <p>Actions</p>
-            <button id="share">Login/Logout</button>
+        <div id="master_log">
+            <table id="master_log_table"></table>
         </div>
 
         <div id="error"></div>
-        <table>
-            <tr><td>onAuthorized</td><td id="onAuthorized"></td></tr>
-            <tr><td>isLinked</td><td id="isLinked"></td></tr>
-        </table>
 
-        <p>onAuthorized Data</p>
-        <table id="onAuthorizedData"></table>
-        <p>context data</p>
-        <table id="context"></table>
+        <div id="pagecontrol">
+            <span id="go_main_page">Main Page</span>
+            <span id="go_pubsub_page">PubSub Page</span>
+        </div>
+        <div id="pages">
+            <div id="main_page" class="page active">
+                <h2>Main Data</h2>
 
-        <p>onHighlightChanged data</p>
-        <table id="onHighlightChanged"></table>
-        <p>onVisibilityChanged data</p>
-        <table id="onVisibilityChanged"></table>
+                <div id="buttons">
+                    <p>Actions</p>
+                    <button id="share">Login/Logout</button>
+                </div>
 
-        <p>featureflags data</p>
-        <table id="features"></table>
-        <p>featureflags onchanged data</p>
-        <div id="features_onchanged"></div>
+                <table>
+                    <tr><td>onAuthorized</td><td id="onAuthorized"></td></tr>
+                    <tr><td>isLinked</td><td id="isLinked"></td></tr>
+                </table>
 
-        <p>viewer data</p>
-        <table id="viewer"></table>
-        <p>viewer onchanged data</p>
-        <table id="viewer_onchanged"></div>
+                <p>onAuthorized Data</p>
+                <table id="onAuthorizedData"></table>
+                <p>context data</p>
+                <table id="context"></table>
 
-        <p>Query Params</p>
-        <div id="query_params"></div>
+                <p>onHighlightChanged data</p>
+                <table id="onHighlightChanged"></table>
+                <p>onVisibilityChanged data</p>
+                <table id="onVisibilityChanged"></table>
+
+                <p>features/featureflags data</p>
+                <table id="features"></table>
+                <p>features/featureflags onchanged data</p>
+                <div id="features_onchanged"></div>
+
+                <p>viewer data</p>
+                <table id="viewer"></table>
+                <p>viewer onchanged data</p>
+                <table id="viewer_onchanged"></table>
+
+                <p>Query Params</p>
+                <div id="query_params"></div>
+            </div>
+
+            <div id="pubsub_page" class="page">
+                <h2>PubSub Data</h2>
+                <p class="whisper_target"></p>
+                <div id="pubsub_log"></div>
+            </div>
+        </div>
     </div>
 
+    <script src="page.js"></script>
     <script src="script.js"></script>
+    <script src="actions.js"></script>
+    <script src="pubsub.js"></script>
 </body>
 </html>

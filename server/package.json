@@ -1,0 +1,23 @@
+{
+  "name": "extensiontest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BarryCarlyon/twitch_extension_debug.git"
+  },
+  "author": "Barry Carlyon",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/BarryCarlyon/twitch_extension_debug/issues"
+  },
+  "homepage": "https://github.com/BarryCarlyon/twitch_extension_debug#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

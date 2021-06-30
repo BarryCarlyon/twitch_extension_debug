@@ -21,6 +21,26 @@ body.twitch_dark {
     color: #EEEEEE;
 }
 
+#master_log {
+    height:  200px;
+    width: 100%;
+    display: block;
+    border: 2px solid orange;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+#master_log table {
+    width: 100%;
+}
+
+#pagecontrol span {
+    border-bottom: 1px solid pink;
+    border-right: 1px solid pink;
+    cursor: pointer;
+}
+#pages .page { display: none; }
+#pages .page.active { display: block; }
+
 #logged_in,
 #logged_out {
     display: none;
