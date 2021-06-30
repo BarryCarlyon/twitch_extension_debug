@@ -29,6 +29,7 @@ window.Twitch.ext.onAuthorized((auth) => {
 });
 
 window.Twitch.ext.onContext((ctx) => {
+    console.log(ctx);
     iterateObject(document.getElementById('context'), ctx);
 });
 window.Twitch.ext.onError((err) => {
