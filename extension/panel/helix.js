@@ -13,7 +13,7 @@ function collectHelix(channel_id) {
     })
     .then(resp => {
         master_log('Got Helix for channel');
-        document.getElementById('helix_log_channel'.textContent = '';
+        document.getElementById('helix_log_channel').textContent = '';
         document.getElementById('helix_log_channel').append(table);
 
         var table = document.createElement('table');
@@ -52,7 +52,7 @@ function collectHelix(channel_id) {
     })
     .then(resp => {
         master_log('Got Helix for user');
-        document.getElementById('helix_log_user'.textContent = '';
+        document.getElementById('helix_log_user').textContent = '';
         document.getElementById('helix_log_user').append(table);
 
         var table = document.createElement('table');
