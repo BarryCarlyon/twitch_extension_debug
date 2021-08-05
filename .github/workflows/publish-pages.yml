@@ -20,9 +20,3 @@ jobs:
           FOLDER: extension
           TARGET_FOLDER: /
           CLEAN: true
-
-      - name: Prepare Twitch Zip
-        uses: papeloto/action-zip@v1
-        with:
-          files: /
-          dest: upload_to_twitch.zip
