@@ -1,0 +1,67 @@
+html, body, #content {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+#content {
+    overflow: scroll;
+}
+body {
+
+    background: #EEEEEE;
+    color: #111111;
+
+    font-size: 30px;
+    font-family: Verdana;
+}
+body.twitch_dark {
+    background: #111111;
+    color: #EEEEEE;
+}
+
+#master_log {
+    height:  200px;
+    width: 100%;
+    display: block;
+    border: 2px solid orange;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+#master_log table {
+    width: 100%;
+}
+
+#pagecontrol {
+    width: 100%;
+    display: block;
+}
+#pages .page { display: none; }
+#pages .page.active { display: block; }
+
+#logged_in,
+#logged_out {
+    display: none;
+}
+
+.logged_in #logged_in,
+.logged_out #logged_out {
+    display: block
+}
+
+table, button {
+    width: 100%;
+}
+img {
+    width: 50%;
+}
+th, td {
+    font-size: 15px;
+    padding: 2px 3px;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}
+
+tr td:first-child { text-align: right; }
+tr td { text-align: left; }
