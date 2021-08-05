@@ -12,11 +12,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Deploy Examples 🚀
+      - name: Deploy Extension to GH Pages 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
           FOLDER: extension
-          TARGET_FOLDER: extension
+          TARGET_FOLDER: /
           CLEAN: true
