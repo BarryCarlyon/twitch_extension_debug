@@ -2,9 +2,9 @@
 
 This repo contains a Twitch Extensions "tester".
 Which _basically_ implements a most/every feature for test purposes.
-And is used to flag a number of (https://github.com/twitchdev/issues/issues)[TwitchDev issues]
+And is used to flag a number of [TwitchDev issues](https://github.com/twitchdev/issues/issues)
 
-## server Port
+## Server Port
 
 To change the port that the server listens on for Extension Serving modify the following in server/server.js
 
