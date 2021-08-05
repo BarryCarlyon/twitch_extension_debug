@@ -1,4 +1,6 @@
 function collectHelix(channel_id) {
+    master_log('Call Helix with HelixToken for channel: ' + channel_id);
+
     fetch(
         'https://api.twitch.tv/helix/users/?id=' + channel_id,
         {
@@ -10,6 +12,7 @@ function collectHelix(channel_id) {
         return resp.json();
     })
     .then(resp => {
+        master_log('Got Helix for channel');
         document.getElementById('helix_log_channel'.textContent = '';
         document.getElementById('helix_log_channel').append(table);
 
@@ -26,14 +29,17 @@ function collectHelix(channel_id) {
         }
     })
     .catch(err => {
+        master_log('Got Helix for channel: failed');
         console.log(err);
     });
 
 
     if (!window.Twitch.ext.viewer.isLinked) {
+        master_log('Call Helix with HelixToken for user: No Not Logged In');
         return;
     }
 
+    master_log('Call Helix with HelixToken for user: ' + window.Twitch.ext.viewer.id);
     fetch(
         'https://api.twitch.tv/helix/users/?id=' + window.Twitch.ext.viewer.id,
         {
@@ -45,6 +51,7 @@ function collectHelix(channel_id) {
         return resp.json();
     })
     .then(resp => {
+        master_log('Got Helix for user');
         document.getElementById('helix_log_user'.textContent = '';
         document.getElementById('helix_log_user').append(table);
 
@@ -61,6 +68,7 @@ function collectHelix(channel_id) {
         }
     })
     .catch(err => {
+        master_log('Got Helix for user: failed');
         console.log(err);
     });
 }
