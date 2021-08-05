@@ -1,5 +1,6 @@
-document.getElementById('pagecontrol').addEventListener('click', (e) => {
-    let target = e.target.getAttribute('id').replace('go_', '');
+document.getElementById('pagecontrol').addEventListener('change', (e) => {
+    let target = e.target.value;
+    console.log('Chnage page to', target);
     let pages = document.getElementById('pages').getElementsByClassName('page');
     for (let x=0;x<pages.length;x++) {
         if (pages[x].getAttribute('id') == target) {

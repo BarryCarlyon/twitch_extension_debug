@@ -33,10 +33,9 @@ body.twitch_dark {
     width: 100%;
 }
 
-#pagecontrol span {
-    border-bottom: 1px solid pink;
-    border-right: 1px solid pink;
-    cursor: pointer;
+#pagecontrol {
+    width: 100%;
+    display: block;
 }
 #pages .page { display: none; }
 #pages .page.active { display: block; }
