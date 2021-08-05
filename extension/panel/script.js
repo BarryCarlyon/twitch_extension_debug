@@ -65,7 +65,7 @@ window.Twitch.ext.onAuthorized((auth) => {
         kids[x].textContent = window.Twitch.ext.viewer.opaqueId;
     }
 
-    collectHelix();
+    collectHelix(auth.channelId);
 });
 
 window.Twitch.ext.onContext((ctx) => {
