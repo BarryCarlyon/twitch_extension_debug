@@ -23,6 +23,12 @@ actions_page.append(onFollow);
     let onFollowt = document.createElement('table');
     onFollow.append(onFollowt);
 
+        let onFollowtr = document.createElement('tr');
+        onFollowt.append(onFollowtr);
+        let onFollowtd = document.createElement('td');
+        onFollowtr.append(onFollowtd);
+        onFollowtd.textContent = 'NoData';
+
 window.Twitch.ext.actions.onFollow((didFollow, channel_name)=> {
     master_log('Read actions.onFollow');
     iterateObject(onFollowt, {
