@@ -13,23 +13,30 @@ actions_page.append(follow_button);
         window.Twitch.ext.actions.followChannel(channel_name);
     });
 
+let onFollow = document.createElement('div');
+actions_page.append(onFollow);
+
+    let onFollowp = document.createElement('p');
+    onFollow.append(onFollowp);
+    onFollowp.textContent = 'onFollow data';
+
+    let onFollowt = document.createElement('table');
+    onFollow.append(onFollowt);
+
+window.Twitch.ext.actions.onFollow((didFollow, channel_name)=> {
+    master_log('Read actions.onFollow');
+    iterateObject(onFollowt, {
+        didFollow,
+        channel_name
+    });
+});
+
 let minimise_button = document.createElement('button');
 actions_page.append(minimise_button);
     minimise_button.textContent = 'window.Twitch.ext.actions.minimize';
     minimise_button.addEventListener('click', (e) => {
         window.Twitch.ext.actions.minimize();
     });
-
-let onfollow = document.createElement('div');
-actions_page.append(onfollow);
-
-window.Twitch.ext.actions.onFollow((didFollow, channel_name)=> {
-    master_log('Read actions.onFollow');
-    iterateObject(onFollow, {
-        didFollow,
-        channel_name
-    });
-});
 
 let requestID_button = document.createElement('button');
 actions_page.append(requestID_button);
