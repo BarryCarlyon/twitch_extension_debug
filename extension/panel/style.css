@@ -50,6 +50,9 @@ body.twitch_dark {
     display: block
 }
 
+button {
+    cursor: pointer;
+}
 table, button {
     width: 100%;
 }
