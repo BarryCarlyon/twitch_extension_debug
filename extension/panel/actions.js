@@ -13,12 +13,19 @@ actions_page.append(follow_button);
         window.Twitch.ext.actions.followChannel(channel_name);
     });
 
-let onfollow = document.createElement('div');
-actions_page.append(onfollow);
+let onFollow = document.createElement('div');
+actions_page.append(onFollow);
+
+    let onFollowp = document.createElement('p');
+    onFollow.append(onFollowp);
+    onFollowp.textContent = 'onFollow data';
+
+    let onFollowt = document.createElement('table');
+    onFollow.append(onFollowt);
 
 window.Twitch.ext.actions.onFollow((didFollow, channel_name)=> {
     master_log('Read actions.onFollow');
-    iterateObject(onfollow, {
+    iterateObject(onFollowt, {
         didFollow,
         channel_name
     });
