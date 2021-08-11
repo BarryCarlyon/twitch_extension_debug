@@ -82,9 +82,12 @@ window.Twitch.ext.onHighlightChanged((isHighlighted) => {
     master_log('Read onHighlightChanged changed');
     iterateObject(document.getElementById('onHighlightChanged'), isHighlighted);
 });
-window.Twitch.ext.onVisibilityChanged((isHighlighted) => {
-    master_log('Read onVisibilityChanged changed');
-    iterateObject(document.getElementById('onVisibilityChanged'), isHighlighted);
+window.Twitch.ext.onVisibilityChanged((isVisible, context) => {
+    master_log('Read onVisibilityChanged changed: ' + isVisible);
+    iterateObject(document.getElementById('onVisibilityChanged'), {
+        isVisible,
+        context
+    });
 });
 
 function iterateObject(target, obj) {
@@ -119,7 +122,10 @@ function iterateObject(target, obj) {
         } else if (typeof obj[k] == 'object') {
             //d.setAttribute('id', k + '_data');
             var t = document.createElement('table');
+            d.append(t);
             iterateObject(t, obj[k]);
+        } else {
+            d.textContent = 'No Process', typeof obj[k];
         }
     }
 }
