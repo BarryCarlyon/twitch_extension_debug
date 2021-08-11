@@ -1,3 +1,5 @@
+let channel_name = '';
+
 function collectHelix(channel_id) {
     master_log('Call Helix with HelixToken for channel: ' + channel_id);
 
@@ -28,6 +30,8 @@ function collectHelix(channel_id) {
             td.textContent = resp.data[0][key];
             tr.append(td);
         }
+
+        channel_name = resp.data[0].login;
     })
     .catch(err => {
         master_log('Got Helix for channel: failed');
