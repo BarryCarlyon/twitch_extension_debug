@@ -52,9 +52,8 @@ window.Twitch.ext.onAuthorized((auth) => {
 
     iterateObject(document.getElementById('features'), window.Twitch.ext.features);
     window.Twitch.ext.features.onChanged((dat) => {
-        master_log('Read features changed');
-        //document.getElementById('features_onchanged', JSON.stringify(dat));
-        iterateObject(document.getElementById('features_onchanged'), dat);
+        master_log('Read features changed', dat);
+        iterateObject(document.getElementById('features_onchanged'), { dat });
     });
     master_log('Read features');
 
