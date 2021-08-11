@@ -79,8 +79,10 @@ window.Twitch.ext.onError((err) => {
     document.getElementById('error').textContent(err);
 });
 window.Twitch.ext.onHighlightChanged((isHighlighted) => {
-    master_log('Read onHighlightChanged changed');
-    iterateObject(document.getElementById('onHighlightChanged'), isHighlighted);
+    master_log('Read onHighlightChanged changed: ' + isHighlighted);
+    iterateObject(document.getElementById('onHighlightChanged'), {
+        isHighlighted
+    });
 });
 window.Twitch.ext.onVisibilityChanged((isVisible, context) => {
     master_log('Read onVisibilityChanged changed: ' + isVisible);
