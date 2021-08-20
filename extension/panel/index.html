@@ -21,6 +21,7 @@
             <option value="actions_page">Actions Page</option>
             <option value="pubsub_page">PubSub Page</option>
             <option value="helix_page">Helix Page</option>
+            <option value="config_page">Config Page</option>
         </select>
         <div id="pages">
             <div id="main_page" class="page active">
@@ -74,6 +75,30 @@
             </div>
 
             <div id="actions_page" class="page"></div>
+
+            <div id="config_page" class="page">
+                <table>
+                    <tr>
+                        <td>Segment</td>
+                        <td>Content</td>
+                    </tr>
+                    <tr>
+                        <td>Global</td>
+                        <td id="config_global"></td>
+                    </tr>
+                    <tr><td id="config_global_raw"></td>
+                    <tr>
+                        <td>Broadcaster</td>
+                        <td id="config_broadcaster"></td>
+                    </tr>
+                    <tr><td id="config_broadcaster_raw"></td>
+                    <tr>
+                        <td>Developer</td>
+                        <td id="config_developer"></td>
+                    </tr>
+                    <tr><td id="config_developer_raw"></td>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -83,5 +108,7 @@
     <script src="actions.js"></script>
     <script src="pubsub.js"></script>
     <script src="helix.js"></script>
+
+    <script src="config_service.js"></script>
 </body>
 </html>
