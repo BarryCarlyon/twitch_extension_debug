@@ -32,8 +32,6 @@ function bindListens() {
 
 let pubSubEl = document.getElementById('pubsub_log');
 function pubSub(target, message) {
-    let line = document.createElement('div');
-    pubSubEl.prepend(line);
 
     let jmessage = {};
     try {
@@ -43,5 +41,12 @@ function pubSub(target, message) {
         return;
     }
 
-    line.textContent = target + ': ' + message;
+    let textarea = document.createElement('textarea');
+    pubSubEl.prepend(textarea);
+    textarea.setAttribute('readonly', 'readonly');
+    textarea.value = content;
+
+    let line = document.createElement('div');
+    pubSubEl.prepend(line);
+    line.textContent = target;
 }

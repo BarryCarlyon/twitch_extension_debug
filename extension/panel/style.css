@@ -4,6 +4,7 @@ html, body, #content {
     left: 0px;
     right: 0px;
     bottom: 0px;
+    font-size: 25px;
 }
 #content {
     overflow: scroll;
@@ -13,7 +14,7 @@ body {
     background: #EEEEEE;
     color: #111111;
 
-    font-size: 30px;
+    font-size: 25px;
     font-family: Verdana;
 }
 body.twitch_dark {
@@ -68,3 +69,9 @@ th, td {
 
 tr td:first-child { text-align: right; }
 tr td { text-align: left; }
+
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    height: 70px;
+}
