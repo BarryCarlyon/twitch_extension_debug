@@ -1,6 +1,8 @@
 /* Tell the JS Helper to load the config */
 window.Twitch.ext.configuration.onChanged(() => {
     loadSegment('global');
+    loadSegment('broadcaster');
+    loadSegment('developer');
 });
 
 function loadSegment(segment) {
@@ -26,7 +28,7 @@ function loadSegment(segment) {
 
             let table = document.createElement('table');
             el.textContent = '';
-            el.append(table):
+            el.append(table);
             for (var k in this_config) {
                 let r = document.createElement('tr');
                 table.append(r);
