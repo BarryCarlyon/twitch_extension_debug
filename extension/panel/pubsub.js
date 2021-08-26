@@ -44,7 +44,7 @@ function pubSub(target, message) {
     let textarea = document.createElement('textarea');
     pubSubEl.prepend(textarea);
     textarea.setAttribute('readonly', 'readonly');
-    textarea.value = content;
+    textarea.value = message;
 
     let line = document.createElement('div');
     pubSubEl.prepend(line);
