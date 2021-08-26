@@ -4,7 +4,7 @@ html, body, #content {
     left: 0px;
     right: 0px;
     bottom: 0px;
-    font-size: 25px;
+    font-size: 20px;
 }
 #content {
     overflow: scroll;
@@ -14,7 +14,7 @@ body {
     background: #EEEEEE;
     color: #111111;
 
-    font-size: 25px;
+    font-size: 20px;
     font-family: Verdana;
 }
 body.twitch_dark {
