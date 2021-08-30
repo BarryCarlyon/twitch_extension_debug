@@ -75,3 +75,12 @@ textarea {
     box-sizing: border-box;
     height: 70px;
 }
+
+.inDevelopment {
+    background-color: rgba(0,100,0,0.5);
+}
+.bits_product {
+    border: 1px solid #000000;
+    margin: 2px;
+    box-sizing: border-box;
+}
