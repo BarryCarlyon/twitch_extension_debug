@@ -22,6 +22,7 @@
             <option value="pubsub_page">PubSub Page</option>
             <option value="helix_page">Helix Page</option>
             <option value="config_page">Config Page</option>
+            <option value="bits_page">Bits Page</option>
         </select>
         <div id="pages">
             <div id="main_page" class="page active">
@@ -64,7 +65,7 @@
             <div id="pubsub_page" class="page">
                 <h2>PubSub Data</h2>
                 <p>WhisperTarget: <span class="whisper_target"></span></p>
-                
+
                 <p>PubSub Log:</p>
                 <div id="pubsub_log"></div>
             </div>
@@ -101,6 +102,12 @@
                     <tr><td colspan="2" id="config_developer_raw"></td>
                 </table>
             </div>
+
+            <div id="bits_page" class="page">
+                <button id="get_bits_products">Get Products</button>
+                <div id="bits_products_count"></div>
+                <div id="bits_products"></div>
+            </div>
         </div>
     </div>
 
@@ -110,6 +117,7 @@
     <script src="actions.js"></script>
     <script src="pubsub.js"></script>
     <script src="helix.js"></script>
+    <script src="bits.js"></script>
 
     <script src="config_service.js"></script>
 </body>
