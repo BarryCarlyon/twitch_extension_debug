@@ -57,10 +57,10 @@ document.getElementById('get_bits_products').addEventListener('click', (e) => {
 //    });
 });
 
-twitch.ext.bits.onTransactionCancelled(() => {
+window.Twitch.ext.bits.onTransactionCancelled(() => {
     master_log('Transaction was Cancelled');
 });
-twitch.ext.bits.onTransactionComplete((transaction) => {
+window.Twitch.ext.bits.onTransactionComplete((transaction) => {
     master_log('Transaction was completed');
     master_log('Initiator: ' + transaction.initiator);
 
