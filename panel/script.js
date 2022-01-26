@@ -75,7 +75,7 @@ window.Twitch.ext.onContext((ctx) => {
 window.Twitch.ext.onError((err) => {
     master_log('Read onError! Check console');
     console.error('TWITCH EXT ERROR', err);
-    document.getElementById('error').textContent(err);
+    document.getElementById('error').textContent = JSON.stringify(err);
 });
 window.Twitch.ext.onHighlightChanged((isHighlighted) => {
     master_log('Read onHighlightChanged changed: ' + isHighlighted);
