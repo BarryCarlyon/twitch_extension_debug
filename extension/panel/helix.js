@@ -1,6 +1,11 @@
 let channel_name = '';
 
 function collectHelix(channel_id) {
+    if (!helix) {
+        master_log('Cannot Call Helix with HelixToken no token');
+        return;
+    }
+
     master_log('Call Helix with HelixToken for channel: ' + channel_id);
 
     fetch(
