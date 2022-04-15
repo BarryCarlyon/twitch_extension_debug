@@ -11,6 +11,7 @@ document.getElementById('get_bits_products').addEventListener('click', (e) => {
             master_log(`Got Products: ${products.length}`);
             //console.log(products);
             bits_products_count.textContent = `Product Count: ${products.length}`;
+            bits_products.textContent = '';
 
             products.forEach(product => {
                 let a_product = document.createElement('div');
