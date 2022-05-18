@@ -11,13 +11,15 @@
     "type": "git",
     "url": "git+https://github.com/BarryCarlyon/twitch_extension_debug.git"
   },
-  "author": "Barry Carlyon",
+  "author": "Barry Carlyon (https://github.com/BarryCarlyon)",
   "license": "WTFPL",
   "bugs": {
     "url": "https://github.com/BarryCarlyon/twitch_extension_debug/issues"
   },
   "homepage": "https://github.com/BarryCarlyon/twitch_extension_debug#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "twitchextensioncsp": "^1.1.2"
   }
 }
