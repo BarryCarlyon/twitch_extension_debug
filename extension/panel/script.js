@@ -24,16 +24,18 @@ params.forEach((value, key) => {
 iterateObject(document.getElementById('query_params'), p);
 master_log('Read query_params');
 
-let helix = {};
+let helix = false;
 window.Twitch.ext.onAuthorized((auth) => {
     master_log('Read onAuthorized');
     document.getElementById('onAuthorized').textContent = new Date();
 
     iterateObject(document.getElementById('onAuthorizedData'), auth);
 
-    helix = {
-        'Client-ID': auth.clientId,
-        'Authorization': 'Extension ' + auth.helixToken
+    if (auth.helixToken) {
+        helix = {
+            'Client-ID': auth.clientId,
+            'Authorization': 'Extension ' + auth.helixToken
+        }
     }
 
     if (window.Twitch.ext.viewer.isLinked) {
@@ -75,7 +77,7 @@ window.Twitch.ext.onContext((ctx) => {
 window.Twitch.ext.onError((err) => {
     master_log('Read onError! Check console');
     console.error('TWITCH EXT ERROR', err);
-    document.getElementById('error').textContent(err);
+    document.getElementById('error').textContent = JSON.stringify(err);
 });
 window.Twitch.ext.onHighlightChanged((isHighlighted) => {
     master_log('Read onHighlightChanged changed: ' + isHighlighted);
