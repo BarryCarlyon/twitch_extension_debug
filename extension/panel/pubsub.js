@@ -1,5 +1,11 @@
+let listenedOnce = false;
 function bindListens() {
+    if (listenedOnce) {
+        master_log('Deny duplicate listen request');
+        return;
+    }
     master_log('Binding listens');
+    listenedOnce = true;
 
     master_log('Listen to: global');
     window.Twitch.ext.listen(
