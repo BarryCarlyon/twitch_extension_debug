@@ -80,27 +80,40 @@
             <div id="actions_page" class="page"></div>
 
             <div id="config_page" class="page">
-                <table>
-                    <tr>
-                        <td>Segment</td>
-                        <td>Content</td>
-                    </tr>
-                    <tr>
-                        <td>Global</td>
-                        <td id="config_global"></td>
-                    </tr>
-                    <tr><td colspan="2" id="config_global_raw"></td>
-                    <tr>
-                        <td>Broadcaster</td>
-                        <td id="config_broadcaster"></td>
-                    </tr>
-                    <tr><td colspan="2" id="config_broadcaster_raw"></td>
-                    <tr>
-                        <td>Developer</td>
-                        <td id="config_developer"></td>
-                    </tr>
-                    <tr><td colspan="2" id="config_developer_raw"></td>
-                </table>
+                <form action="" method="post" id="config_setter">
+                    <fieldset>
+                        <div class="form_group">
+                            <textarea id="the_config"></textarea>
+                        </div>
+                        <div class="form_group">
+                            <input type="submit" id="the_config_save" value="Save Broadcaster Config" />
+                        </div>
+                    </fieldset>
+                </form>
+                <div id="config_values">
+                    <p>To refresh/get current contents reload the page</p>
+                    <table>
+                        <tr>
+                            <td>Segment</td>
+                            <td>Content</td>
+                        </tr>
+                        <tr>
+                            <td>Global</td>
+                            <td id="config_global"></td>
+                        </tr>
+                        <tr><td colspan="2" id="config_global_raw"></td>
+                        <tr>
+                            <td>Broadcaster</td>
+                            <td id="config_broadcaster"></td>
+                        </tr>
+                        <tr><td colspan="2" id="config_broadcaster_raw"></td>
+                        <tr>
+                            <td>Developer</td>
+                            <td id="config_developer"></td>
+                        </tr>
+                        <tr><td colspan="2" id="config_developer_raw"></td></tr>
+                    </table>
+                </div>
             </div>
 
             <div id="bits_page" class="page">
