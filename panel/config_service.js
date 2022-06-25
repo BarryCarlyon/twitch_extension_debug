@@ -57,8 +57,11 @@ function considerConfig(channel_id) {
     if (window.Twitch.ext.viewer.id == channel_id) {
         document.getElementById('config_setter').addEventListener('submit', (e) => {
             e.preventDefault();
-            let conf = JSON.stringify(document.getElementById('the_config').value);
-            window.Twitch.ext.configuration.set('broadcaster', '', JSON.stringify(conf));
+            let conf = document.getElementById('the_config').value;
+            if (document.getElementById('the_config_json').checked) {
+                conf = JSON.stringify(conf);
+            }
+            window.Twitch.ext.configuration.set('broadcaster', '', conf);
         });
     } else {
         document.getElementById('config_setter').style.display = 'none';
