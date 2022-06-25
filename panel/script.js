@@ -67,6 +67,8 @@ window.Twitch.ext.onAuthorized((auth) => {
     }
 
     collectHelix(auth.channelId);
+
+    considerConfig(auth.channelId);
 });
 
 window.Twitch.ext.onContext((ctx) => {
