@@ -1,11 +1,13 @@
 /* Tell the JS Helper to load the config */
 window.Twitch.ext.configuration.onChanged(() => {
+    master_log('configuration onChanged called');
     loadSegment('global');
     loadSegment('broadcaster');
     loadSegment('developer');
 });
 
 function loadSegment(segment) {
+    master_log(`configuration interacting segment ${segment}`);
     let el = document.getElementById('config_' + segment);
     let elr = document.getElementById('config_' + segment + '_raw');
 
