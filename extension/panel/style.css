@@ -12,7 +12,7 @@ body {
     background: #EEEEEE;
     color: #111111;
 
-    font-size: 18px;
+    font-size: 14px;
     font-family: Verdana;
 }
 body.twitch_dark {
@@ -32,7 +32,7 @@ body.twitch_dark {
     width: 100%;
 }
 
-#pagecontrol {
+select, input, label {
     width: 100%;
     display: block;
 }

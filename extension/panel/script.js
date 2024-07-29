@@ -25,6 +25,12 @@ iterateObject(document.getElementById('query_params'), p);
 master_log('Read query_params');
 
 let helix = false;
+let gojwt = false;
+let channelId = false;
+// this has to be hardcoded
+// it's hardcoded for my test build/test
+let extensionVersion = '0.0.3';
+
 window.Twitch.ext.onAuthorized((auth) => {
     master_log('Read onAuthorized');
     document.getElementById('onAuthorized').textContent = new Date();
@@ -37,6 +43,11 @@ window.Twitch.ext.onAuthorized((auth) => {
             'Authorization': 'Extension ' + auth.helixToken
         }
     }
+    gojwt = {
+        'Client-ID': auth.clientId,
+        'Authorization': 'Bearer ' + auth.token
+    }
+    channelId = auth.channelId;
 
     if (window.Twitch.ext.viewer.isLinked) {
         document.getElementById('isLinked').textContent = 'Shared';
