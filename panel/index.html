@@ -23,42 +23,56 @@
             <option value="helix_page">Helix Page</option>
             <option value="config_page">Config Page</option>
             <option value="bits_page">Bits Page</option>
+            <option value="broadcaster_page">Broadcaster Page</option>
         </select>
         <div id="pages">
             <div id="main_page" class="page active">
                 <h2>Main Data</h2>
 
+                <p>Iterating Various Things</p>
+
                 <div id="buttons">
                     <p>Actions</p>
-                    <button id="share">Login/Logout</button>
+                    <button title="window.Twitch.ext.actions.requestIdShare" id="share">Login/Logout</button>
                 </div>
 
                 <table>
-                    <tr><td>onAuthorized</td><td id="onAuthorized"></td></tr>
-                    <tr><td>isLinked</td><td id="isLinked"></td></tr>
+                    <tr><td>onAuthorized</td><td>LastAt: <span id="onAuthorized"></span></td></tr>
+                    <tr><td>isLinked</td><td>Viewer Shared: <span id="isLinked"></span></td></tr>
                 </table>
 
-                <p>onAuthorized Data</p>
-                <table id="onAuthorizedData"><tr><td>NoData</td></tr></table>
-                <p>context data</p>
-                <table id="context"><tr><td>NoData</td></tr></table>
+                <h2>Callbacks</h2>
 
-                <p>onHighlightChanged data</p>
+                <p>window.Twitch.ext.onAuthorized Data</p>
+                <p>Iterates the onAuthorized callback</p>
+                <table id="onAuthorizedData"><tr><td>NoData</td></tr></table>
+                <p>window.Twitch.ext.onContext data</p>
+                <p>Iterates the onContext callback</p>
+                <table id="onContext"><tr><td>NoData</td></tr></table>
+
+                <p>window.Twitch.ext.onHighlightChanged data</p>
+                <p>Video Overlay and Component only</p>
                 <table id="onHighlightChanged"><tr><td>NoData</td></tr></table>
-                <p>onVisibilityChanged data</p>
+                <p>window.Twitch.ext.onVisibilityChanged data</p>
+                <p>When extension is hidden/reshown</p>
                 <table id="onVisibilityChanged"><tr><td>NoData</td></tr></table>
 
                 <p>features/featureflags data</p>
+                <p>Iterates <pre>window.Twitch.ext.features</pre></p>
                 <table id="features"><tr><td>NoData</td></tr></table>
                 <p>features/featureflags onchanged data</p>
+                <p>Iterates the <pre>window.Twitch.ext.features.onChanged</pre> callback</p>
                 <table id="features_onchanged"><tr><td>NoData</td></tr></table>
 
                 <p>viewer data</p>
+                <p>Iterates the <pre>window.Twitch.ext.viewer</pre> object</p>
                 <table id="viewer"><tr><td>NoData</td></tr></table>
                 <p>viewer onchanged data</p>
+                <p>Iterates the <pre>window.Twitch.ext.viewer.onChanged</pre> object when it occurs</p>
                 <table id="viewer_onchanged"><tr><td>NoData</td></tr></table>
 
                 <p>Query Params</p>
+                <p>Iterate the Query parameters passed to the extension <a href="https://dev.twitch.tv/docs/extensions/reference/#client-query-parameters" target=_blank">Read More</a></p>
                 <div id="query_params"></div>
             </div>
 
@@ -71,8 +85,11 @@
             </div>
 
             <div id="helix_page" class="page">
+                <p>Testing <a href="https://dev.twitch.tv/docs/extensions/frontend-api-usage/" target="_blank">Frontend API Usage</a></a></p>
+                <p>Using the helix token to get the channel the extension is on data from <a href="https://dev.twitch.tv/docs/api/reference/#get-users" target="_blank">Get Users</a></a></p>
                 <h2>Helix Data Channel</h2>
                 <div id="helix_log_channel"></div>
+                <p>Using the helix token to get the viewer of the extension data, if logged in from <a href="https://dev.twitch.tv/docs/api/reference/#get-users" target="_blank">Get Users</a></a></p>
                 <h2>Helix Data User</h2>
                 <div id="helix_log_user"></div>
             </div>
@@ -128,6 +145,19 @@
                 <div id="bits_products_count"></div>
                 <div id="bits_products"></div>
             </div>
+
+            <div id="broadcaster_page" class="page">
+                <form id="sendchat">
+                    <div>
+                        <label>Message</label>
+                        <input type="text" name="chatmessage">
+                    </div>
+                    <div>
+                        <input type="submit" />
+                    </div>
+                    <div id="sendchatresponse"></div>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -138,6 +168,8 @@
     <script src="pubsub.js"></script>
     <script src="helix.js"></script>
     <script src="bits.js"></script>
+
+    <script src="broadcaster.js"></script>
 
     <script src="config_service.js"></script>
 </body>

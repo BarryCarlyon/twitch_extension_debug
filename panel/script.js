@@ -25,6 +25,12 @@ iterateObject(document.getElementById('query_params'), p);
 master_log('Read query_params');
 
 let helix = false;
+let gojwt = false;
+let channelId = false;
+// this has to be hardcoded
+// it's hardcoded for my test build/test
+let extensionVersion = '0.0.3';
+
 window.Twitch.ext.onAuthorized((auth) => {
     master_log('Read onAuthorized');
     document.getElementById('onAuthorized').textContent = new Date();
@@ -37,13 +43,18 @@ window.Twitch.ext.onAuthorized((auth) => {
             'Authorization': 'Extension ' + auth.helixToken
         }
     }
+    gojwt = {
+        'Client-ID': auth.clientId,
+        'Authorization': 'Bearer ' + auth.token
+    }
+    channelId = auth.channelId;
 
     if (window.Twitch.ext.viewer.isLinked) {
-        document.getElementById('isLinked').textContent = 'isLinked';
+        document.getElementById('isLinked').textContent = 'Shared';
     } else {
-        document.getElementById('isLinked').textContent = 'isUnLinked';
+        document.getElementById('isLinked').textContent = 'Not Shared';
     }
-    master_log('Read isLinked');
+    master_log('Read window.Twitch.ext.viewer.isLinked');
 
     iterateObject(document.getElementById('viewer'), window.Twitch.ext.viewer);
     window.Twitch.ext.viewer.onChanged(() => {
@@ -74,7 +85,12 @@ window.Twitch.ext.onAuthorized((auth) => {
 window.Twitch.ext.onContext((ctx) => {
     console.log(ctx);
     // don't master log coz SPAM
-    iterateObject(document.getElementById('context'), ctx);
+    iterateObject(document.getElementById('onContext'), ctx);
+    if (ctx.theme == 'dark') {
+        document.body.classList.add('twitch_dark');
+    } else {
+        document.body.classList.remove('twitch_dark');
+    }
 });
 window.Twitch.ext.onError((err) => {
     master_log('Read onError! Check console');
