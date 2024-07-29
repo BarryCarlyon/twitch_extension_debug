@@ -75,6 +75,11 @@ window.Twitch.ext.onContext((ctx) => {
     console.log(ctx);
     // don't master log coz SPAM
     iterateObject(document.getElementById('onContext'), ctx);
+    if (ctx.theme == 'dark') {
+        document.body.classList.add('twitch_dark');
+    } else {
+        document.body.classList.remove('twitch_dark');
+    }
 });
 window.Twitch.ext.onError((err) => {
     master_log('Read onError! Check console');
