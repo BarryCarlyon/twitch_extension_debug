@@ -39,11 +39,11 @@ window.Twitch.ext.onAuthorized((auth) => {
     }
 
     if (window.Twitch.ext.viewer.isLinked) {
-        document.getElementById('isLinked').textContent = 'isLinked';
+        document.getElementById('isLinked').textContent = 'Shared';
     } else {
-        document.getElementById('isLinked').textContent = 'isUnLinked';
+        document.getElementById('isLinked').textContent = 'Not Shared';
     }
-    master_log('Read isLinked');
+    master_log('Read window.Twitch.ext.viewer.isLinked');
 
     iterateObject(document.getElementById('viewer'), window.Twitch.ext.viewer);
     window.Twitch.ext.viewer.onChanged(() => {
@@ -74,7 +74,7 @@ window.Twitch.ext.onAuthorized((auth) => {
 window.Twitch.ext.onContext((ctx) => {
     console.log(ctx);
     // don't master log coz SPAM
-    iterateObject(document.getElementById('context'), ctx);
+    iterateObject(document.getElementById('onContext'), ctx);
 });
 window.Twitch.ext.onError((err) => {
     master_log('Read onError! Check console');
